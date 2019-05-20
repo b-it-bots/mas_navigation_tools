@@ -7,7 +7,7 @@
  * 
  */
 
-#include <mcr_navigation_tools/pose_array_to_path_node.h>
+#include <mas_navigation_tools/pose_array_to_path_node.h>
 
 PoseArrayToPathNode::PoseArrayToPathNode() : nh_("~"), is_pose_array_msg_received_(false)
 {

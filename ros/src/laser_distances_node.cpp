@@ -10,7 +10,7 @@
  * Based on code by Frederik Hegger in mcr_collision_velocity_filter
  */
 
-#include <mcr_navigation_tools/laser_distances_node.h>
+#include <mas_navigation_tools/laser_distances_node.h>
 #include <vector>
 #include <string>
 

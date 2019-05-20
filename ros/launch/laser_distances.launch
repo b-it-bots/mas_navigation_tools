@@ -4,7 +4,7 @@
   <arg name="scan_topics" default="ERROR: did not specify argument --scan_topics--" />
   <arg name="target_frame" default="/base_link" />
 
-  <node pkg="mcr_navigation_tools" type="laser_distances_node" name="laser_distances" ns="mcr_navigation" output="screen">
+  <node pkg="mas_navigation_tools" type="laser_distances_node" name="laser_distances" ns="mcr_navigation" output="screen">
     <rosparam file="$(arg footprint_file)" command="load"/>
     <rosparam file="$(find mcr_collision_velocity_filter)/ros/config/collision_velocity_filter.yaml" command="load"/>
 

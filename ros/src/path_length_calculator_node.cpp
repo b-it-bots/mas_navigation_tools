@@ -8,7 +8,7 @@
  * 
  */
 
-#include <mcr_navigation_tools/path_length_calculator_node.h>
+#include <mas_navigation_tools/path_length_calculator_node.h>
 #include <string>
 
 PathLengthCalcNode::PathLengthCalcNode() : nh_("~"), is_global_plan_available_(false), is_event_in_received_(false)
