@@ -10,8 +10,8 @@
  * Based on code by Frederik Hegger in mcr_collision_velocity_filter
  */
 
-#ifndef MCR_NAVIGATION_TOOLS_LASER_DISTANCES_NODE_H
-#define MCR_NAVIGATION_TOOLS_LASER_DISTANCES_NODE_H
+#ifndef MAS_NAVIGATION_TOOLS_LASER_DISTANCES_NODE_H
+#define MAS_NAVIGATION_TOOLS_LASER_DISTANCES_NODE_H
 
 #include <exception>
 #include <string>
@@ -88,4 +88,4 @@ private:
     geometry_msgs::Polygon footprint_;
 };
 
-#endif  // MCR_NAVIGATION_TOOLS_LASER_DISTANCES_NODE_H
+#endif  // MAS_NAVIGATION_TOOLS_LASER_DISTANCES_NODE_H

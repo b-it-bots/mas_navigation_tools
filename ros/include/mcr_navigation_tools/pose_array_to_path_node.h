@@ -7,8 +7,8 @@
  * 
  */
 
-#ifndef MCR_NAVIGATION_TOOLS_POSE_ARRAY_TO_PATH_NODE_H
-#define MCR_NAVIGATION_TOOLS_POSE_ARRAY_TO_PATH_NODE_H
+#ifndef MAS_NAVIGATION_TOOLS_POSE_ARRAY_TO_PATH_NODE_H
+#define MAS_NAVIGATION_TOOLS_POSE_ARRAY_TO_PATH_NODE_H
 
 #include <ros/ros.h>
 #include <nav_msgs/Path.h>
@@ -39,4 +39,4 @@ class PoseArrayToPathNode
         // stores pose array msg received from ros network
         geometry_msgs::PoseArray pose_array_msg_;
 };
-#endif  // MCR_NAVIGATION_TOOLS_POSE_ARRAY_TO_PATH_NODE_H
+#endif  // MAS_NAVIGATION_TOOLS_POSE_ARRAY_TO_PATH_NODE_H
