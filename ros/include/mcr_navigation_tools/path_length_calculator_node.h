@@ -8,15 +8,15 @@
  * 
  */
 
-#ifndef MCR_NAVIGATION_TOOLS_PATH_LENGTH_CALCULATOR_NODE_H
-#define MCR_NAVIGATION_TOOLS_PATH_LENGTH_CALCULATOR_NODE_H
+#ifndef MAS_NAVIGATION_TOOLS_PATH_LENGTH_CALCULATOR_NODE_H
+#define MAS_NAVIGATION_TOOLS_PATH_LENGTH_CALCULATOR_NODE_H
 
 #include <ros/ros.h>
 #include <ros/rate.h>
 #include <nav_msgs/Path.h>
 #include <std_msgs/Float64.h>
 #include <std_msgs/String.h>
-#include <mcr_navigation_tools/path_length_calculator.h>
+#include <mas_navigation_tools/path_length_calculator.h>
 
 class PathLengthCalcNode
 {
@@ -59,4 +59,4 @@ class PathLengthCalcNode
         // flag to indicate that path msg was received from ros network
         bool is_global_plan_available_;
 };
-#endif  // MCR_NAVIGATION_TOOLS_PATH_LENGTH_CALCULATOR_NODE_H
+#endif  // MAS_NAVIGATION_TOOLS_PATH_LENGTH_CALCULATOR_NODE_H
