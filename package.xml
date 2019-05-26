@@ -11,6 +11,7 @@
   <author email="frederik.hegger@h-brs.de">Frederik Hegger</author>
   <author email="olima_84@yahoo.com">Oscar Lima</author> <!--path length calculator-->
   <author email="sushant.chavan@smail.inf.h-brs.de">Sushant Chavan</author>
+  <author email="ahmed.abdelrahman@inf.h-brs.de">Ahmed Faisal Abdelrahman</author>
 
   <buildtool_depend>catkin</buildtool_depend>
 
