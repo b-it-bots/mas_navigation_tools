@@ -10,7 +10,7 @@
 
   <author email="frederik.hegger@h-brs.de">Frederik Hegger</author>
   <author email="olima_84@yahoo.com">Oscar Lima</author> <!--path length calculator-->
-  <author email="suvich15@todo.todo">Sushant Chavan</author>
+  <author email="sushant.chavan@smail.inf.h-brs.de">Sushant Chavan</author>
 
   <buildtool_depend>catkin</buildtool_depend>
 
