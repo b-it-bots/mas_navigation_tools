@@ -103,7 +103,7 @@ The map annotation tool facilitates annotating navigation maps efficiently and f
 
 The following GIF demonstrates the map annotation tool being used to add and update a new pose on RViz:
 
-![Demo](docs/Demo.gif)
+![Demo](docs/MAT_Demo.gif)
 
 ### Installation
 Installing the plugin requires simply cloning this repository in the catkin workspace and building. For a workspace named catkin_ws in the root directory:
@@ -137,4 +137,4 @@ The navigational poses saved to and retrieved to a YAML file (navigation_goals.y
 The containing folder is named according to the ROBOT_ENV environment variable. In order to read from the file and write to it correctly, this must be correctly set before using the tool.
 
 ### Architecture
-![Architecture Diagram](docs/Architecture.png)
+![Architecture Diagram](docs/MAT_Architecture.png)
