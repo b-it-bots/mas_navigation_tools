@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<launch>
+    <arg name="action_name" default="occupancy_checker"/>
+    <arg name="map_topic" default="/map"/>
+
+    <node pkg="mas_navigation_tools" type="occupancy_checker" name="occupancy_checker" output="screen" ns="mas_navigation_tools">
+        <param name="action_name" type="string" value="$(arg action_name)" />
+        <param name="map_topic" type="string" value="$(arg map_topic)" />
+    </node>
+</launch>
