@@ -5,6 +5,8 @@ project(mas_navigation_tools)
 add_compile_options(-std=c++11)
 
 find_package(catkin REQUIRED COMPONENTS
+    actionlib
+    message_generation
     geometry_msgs
     laser_geometry
     message_filters
@@ -20,10 +22,22 @@ find_package(catkin REQUIRED COMPONENTS
 
 find_package(PCL 1.7 REQUIRED)
 
+add_action_files(DIRECTORY ros/action
+  FILES
+    OccupancyChecker.action
+)
+
+generate_messages(
+  DEPENDENCIES
+    geometry_msgs
+    actionlib_msgs
+)
+
 catkin_package(CATKIN_DEPENDS
     geometry_msgs
     nav_msgs
     std_msgs
+    actionlib_msgs
 )
 
 include_directories(
