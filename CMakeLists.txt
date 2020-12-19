@@ -79,6 +79,7 @@ install(PROGRAMS
   ros/scripts/pose_visualiser
   ros/scripts/save_base_map_poses_to_file
   ros/scripts/map_saver
+  ros/scripts/occupancy_checker
   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
 

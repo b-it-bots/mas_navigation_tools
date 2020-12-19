@@ -6,7 +6,7 @@ import rospy
 import actionlib
 from nav_msgs.msg import OccupancyGrid
 from map_msgs.msg import OccupancyGridUpdate
-from mas_perception_msgs.msg import OccupancyCheckerAction, OccupancyCheckerResult
+from mas_navigation_tools.msg import OccupancyCheckerAction, OccupancyCheckerResult
 
 # This class is taken as is from: 
 # https://github.com/awesomebytes/occupancy_grid_python/blob/1034fc18912e57d4ba643ac547256dfbd4f5945b/src/occupancy_grid_python/occupancy_grid_impl.py#L1
