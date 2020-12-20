@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<launch>
+    <!-- Cloud to scan node parameters -->
+    <arg name="obstacle_cloud_in_topic"/>
+    <arg name="obstacle_cloud_to_scan_topic" default="obstacle_scan"/>
+    <arg name="scan_target_frame" default="base_link"/>
+
+    <!-- Scan merger node parameters -->
+    <arg name="merge_robot_and_object_scans" default="true"/>
+    <arg name="laser_scan_merger_start_delay" default="10.0" /> <!-- This is needed as the merger node has to wait until the cloud_to_scan starts publishing on the scan topic -->
+    <arg name="merged_scan_topic" default="merged_scan"/>
+    <arg name="robot_scan_topic" default="/hsrb/base_scan"/>
+
+    <!-- Start the node to convert point clouds to laser scan -->
+    <node pkg="pointcloud_to_laserscan" type="pointcloud_to_laserscan_node" name="pointcloud_to_laserscan_node" output="screen"
+          ns="mas_navigation_tools">
+        <remap from="cloud_in" to="$(arg obstacle_cloud_in_topic)" />
+        <remap from="scan" to="$(arg obstacle_cloud_to_scan_topic)" />
+        <param name="target_frame" value="$(arg scan_target_frame)" />
+    </node>
+
+    <!-- Merge the simulated object scans with the robot's base scan -->
+    <node pkg="ira_laser_tools" name="laserscan_multi_merger" type="laserscan_multi_merger" output="screen" ns="mas_navigation_tools" 
+          if="$(arg merge_robot_and_object_scans)" launch-prefix="bash -c 'sleep $(arg laser_scan_merger_start_delay); $0 $@' ">
+       <param name="destination_frame" value="base_range_sensor_link" />
+       <param name="cloud_destination_topic" value="merged_cloud" />
+       <param name="scan_destination_topic"  value="$(arg merged_scan_topic)" />
+       <param name="laserscan_topics" value="/mas_navigation_tools/$(arg obstacle_cloud_to_scan_topic) $(arg robot_scan_topic) " />
+    </node>
+</launch>
