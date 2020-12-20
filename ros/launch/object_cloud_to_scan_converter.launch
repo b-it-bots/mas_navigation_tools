@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <launch>
     <!-- Cloud to scan node parameters -->
-    <arg name="obstacle_cloud_in_topic"/>
-    <arg name="obstacle_cloud_to_scan_topic" default="obstacle_scan"/>
+    <arg name="object_cloud_in_topic"/>
+    <arg name="object_cloud_to_scan_topic" default="object_scan"/>
     <arg name="scan_target_frame" default="base_link"/>
 
     <!-- Scan merger node parameters -->
@@ -14,8 +14,8 @@
     <!-- Start the node to convert point clouds to laser scan -->
     <node pkg="pointcloud_to_laserscan" type="pointcloud_to_laserscan_node" name="pointcloud_to_laserscan_node" output="screen"
           ns="mas_navigation_tools">
-        <remap from="cloud_in" to="$(arg obstacle_cloud_in_topic)" />
-        <remap from="scan" to="$(arg obstacle_cloud_to_scan_topic)" />
+        <remap from="cloud_in" to="$(arg object_cloud_in_topic)" />
+        <remap from="scan" to="$(arg object_cloud_to_scan_topic)" />
         <param name="target_frame" value="$(arg scan_target_frame)" />
     </node>
 
@@ -25,6 +25,6 @@
        <param name="destination_frame" value="base_range_sensor_link" />
        <param name="cloud_destination_topic" value="merged_cloud" />
        <param name="scan_destination_topic"  value="$(arg merged_scan_topic)" />
-       <param name="laserscan_topics" value="/mas_navigation_tools/$(arg obstacle_cloud_to_scan_topic) $(arg robot_scan_topic) " />
+       <param name="laserscan_topics" value="/mas_navigation_tools/$(arg object_cloud_to_scan_topic) $(arg robot_scan_topic) " />
     </node>
 </launch>
