@@ -1,34 +1,49 @@
 <?xml version="1.0"?>
-<package>
+<package format="2">
   <name>mas_navigation_tools</name>
   <version>0.0.2</version>
   <description>several base navigation tools</description>
 
-  <maintainer email="frederik.hegger@h-brs.de">Frederik Hegger</maintainer>
-  <maintainer email="olima_84@yahoo.com">Oscar Lima</maintainer>
+  <maintainer email="robotics@mail.inf.h-brs.de">MAS Robotics</maintainer>
 
   <license>GPLv3</license>
 
   <author email="frederik.hegger@h-brs.de">Frederik Hegger</author>
   <author email="olima_84@yahoo.com">Oscar Lima</author> <!--path length calculator-->
+  <author email="sushant.chavan@smail.inf.h-brs.de">Sushant Chavan</author>
+  <author email="ahmed.abdelrahman@inf.h-brs.de">Ahmed Faisal Abdelrahman</author>
 
   <buildtool_depend>catkin</buildtool_depend>
 
+  <depend>roscpp</depend>
+  <depend>rospy</depend>
+  <depend>rviz</depend>
+
+  <build_depend>actionlib</build_depend>
+  <build_depend>actionlib_msgs</build_depend>
   <build_depend>laser_geometry</build_depend>
   <build_depend>message_filters</build_depend>
-  <build_depend>roscpp</build_depend>
   <build_depend>roslint</build_depend>
   <build_depend>std_msgs</build_depend>
   <build_depend>nav_msgs</build_depend>
   <build_depend>geometry_msgs</build_depend>
   <build_depend>pcl_ros</build_depend>
+  <build_depend>ira_laser_tools</build_depend>
+  <build_depend>pointcloud_to_laserscan</build_depend>
 
-  <run_depend>std_msgs</run_depend>
-  <run_depend>nav_msgs</run_depend>
-  <run_depend>geometry_msgs</run_depend>
-  <run_depend>pcl_ros</run_depend>
-  <run_depend>visualization_msgs</run_depend>
+  <exec_depend>actionlib</exec_depend>
+  <exec_depend>actionlib_msgs</exec_depend>
+  <exec_depend>std_msgs</exec_depend>
+  <exec_depend>nav_msgs</exec_depend>
+  <exec_depend>geometry_msgs</exec_depend>
+  <exec_depend>pcl_ros</exec_depend>
+  <exec_depend>visualization_msgs</exec_depend>
 
   <test_depend>roslaunch</test_depend>
 
+  <!-- The export tag contains other, unspecified, tags -->
+  <export>
+    <!-- Other tools can request additional information be placed here -->
+  <rviz plugin="${prefix}/plugin_description.xml"/>
+  </export>
 </package>

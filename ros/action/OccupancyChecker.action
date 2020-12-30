@@ -1,0 +1,8 @@
+# Goal
+geometry_msgs/Point[] points
+float64 search_radius
+---
+# Result
+bool[] far_from_obstacle
+---
+# Empty Feedback
