@@ -38,6 +38,7 @@
   <exec_depend>geometry_msgs</exec_depend>
   <exec_depend>pcl_ros</exec_depend>
   <exec_depend>visualization_msgs</exec_depend>
+  <exec_depend>mas_tools</exec_depend>
 
   <test_depend>roslaunch</test_depend>
 
