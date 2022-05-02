@@ -6,6 +6,7 @@ import tf
 from std_msgs.msg import ColorRGBA
 from geometry_msgs.msg import Vector3, Quaternion
 from visualization_msgs.msg import MarkerArray, Marker
+from mas_tools.file_utils import load_yaml_file
 
 class PoseVisualiser(object):
     def __init__(self):
@@ -56,11 +57,11 @@ class PoseVisualiser(object):
 
     def load_poses(self):
         poses = None
-        with open(self.pose_description_file, "r") as stream:
-            try:
-                poses = yaml.load(stream, Loader=yaml.SafeLoader)
-            except yaml.YAMLError as exc:
-                rospy.logerror("failed to load '{}': {}".format(self.pose_description_file, exc))
+        try:
+            poses = load_yaml_file(self.pose_description_file)
+        except (OSError, ValueError) as exc:
+            rospy.logerr("{}: {}".format(type(exc).__name__, exc))
+            raise
 
         return poses
 
