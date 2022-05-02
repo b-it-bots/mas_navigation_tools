@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 import yaml
 import rospy
@@ -15,6 +15,7 @@ class PoseVisualiser(object):
                                               queue_size=5, latch=True)
         self.pose_text_publisher = rospy.Publisher('pose_text', MarkerArray,
                                                    queue_size=5, latch=True)
+        rospy.loginfo("pose description file: {}".format(self.pose_description_file))
         poses = self.load_poses()
         marker_array_arrow = MarkerArray()
         marker_array_text = MarkerArray()
@@ -54,9 +55,13 @@ class PoseVisualiser(object):
         self.pose_text_publisher.publish(marker_array_text)
 
     def load_poses(self):
-        stream = file(self.pose_description_file, 'r')
-        poses = yaml.load(stream)
-        stream.close()
+        poses = None
+        with open(self.pose_description_file, "r") as stream:
+            try:
+                poses = yaml.load(stream, Loader=yaml.SafeLoader)
+            except yaml.YAMLError as exc:
+                rospy.logerror("failed to load '{}': {}".format(self.pose_description_file, exc))
+
         return poses
 
 if __name__ == '__main__':
