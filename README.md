@@ -52,9 +52,24 @@ This package provides different nodes which provides additional features related
 ### Scripts
 1. save_base_map_poses_to_file: Used to create a file in the current folded which contains points of interest in a given map.  
 
-## Arguments
+### Usage
 
-* The default created file is named "navigation_goals.yaml". If a name is provided as an argument, then file name is <provided_name>.yaml
+```
+usage: save_base_map_poses_to_file [-h] [-n NODE_NAME] [-f FILE_NAME] [-r ROBOT_FRAME] [-m MAP_FRAME]
+
+script to record navigation_goals.yaml
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -n NODE_NAME, --node_name NODE_NAME
+                        name of node to intiate (default: save_base_map_pose_to_file
+  -f FILE_NAME, --file_name FILE_NAME
+                        name of file to append goals to (default: navigation_goals.yaml)
+  -r ROBOT_FRAME, --robot_frame ROBOT_FRAME
+                        frame of robot base (default: /base_link)
+  -m MAP_FRAME, --map_frame MAP_FRAME
+                        static frame, e.g. of map (default: /map)
+```
 
 ### Parameters
 * node_frequency: Frecuency of node
