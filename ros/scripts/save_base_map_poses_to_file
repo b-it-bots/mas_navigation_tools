@@ -44,10 +44,14 @@ if __name__ == "__main__":
     signal.signal(signal.SIGINT, signal_handler)
 
     parser = argparse.ArgumentParser(description="script to record navigation_goals.yaml")
-    parser.add_argument('-n', '--node_name', default='save_base_map_pose_to_file')
-    parser.add_argument('-f', '--file_name', default='navigation_goals.yaml')
-    parser.add_argument('-r', '--robot_frame', default='/base_link')
-    parser.add_argument('-m', '--map_frame', default='/map')
+    parser.add_argument('-n', '--node_name', default='save_base_map_pose_to_file',
+                        help='name of node to intiate (default: save_base_map_pose_to_file')
+    parser.add_argument('-f', '--file_name', default='navigation_goals.yaml',
+                        help='name of file to append goals to (default: navigation_goals.yaml)')
+    parser.add_argument('-r', '--robot_frame', default='/base_link',
+                        help='frame of robot base (default: /base_link)')
+    parser.add_argument('-m', '--map_frame', default='/map',
+                        help='static frame, e.g. of map (default: /map)')
     args = parser.parse_args()
 
     main(args.node_name, args.robot_frame, args.map_frame, args.file_name)
