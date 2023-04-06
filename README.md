@@ -4,11 +4,11 @@
 
 This package provides different nodes which provides additional features related for navigation.
 
-## pose_visualiser
+## `pose_visualiser`
 
 ### Scripts
 
-* `pose_visualiser`:
+* [`pose_visualiser`](ros/scripts/pose_visualiser):
     1. reads poses from a navigation goals yaml file in which poses are represented as `<NAME>: [x, y, theta]` pairs and
     2. publishes two marker arrays: one array with arrow markers and another one with text markers
 
@@ -22,35 +22,35 @@ This package provides different nodes which provides additional features related
     * `pose_frame`: Frame in which the poses should be published
     * `pose_description_file`: Absolute path to a yaml file in which poses are represented as `<NAME>: [x, y, theta]` pairs
 
-## path_length_calculator_node
+## `path_length_calculator_node`
 
 ### Scripts
-1. path_length_calculator_node: This node provides listens to nav_msgs Path topic (which contains a global plan for the mobile base) as an array of poses and calculates the path lenght based on the distance between two points of each pose.
+1. [`path_length_calculator_node.cpp`](ros/src/path_length_calculator_node.cpp): This node provides listens to nav_msgs Path topic (which contains a global plan for the mobile base) as an array of poses and calculates the path lenght based on the distance between two points of each pose.
 
 ### Subscribed Topics
-* "event_in": Start/Stop node
-* "plan": Calculate length of this plan.
+* `event_in`: Start/Stop node
+* `plan`: Calculate length of this plan.
 
 ### Published Topics
-* "event_out": Succes/Failure string output
-* "path_length": Gives length of the path published on plan
+* `event_out`: Succes/Failure string output
+* `path_length`: Gives length of the path published on plan
 
 ### Launch Files
-1. path_length_calculator.launch: Launch path_length_calculator_node.  
+1. `path_length_calculator.launch`: Launch path_length_calculator_node.  
 
-## pose_array_to_path
-1. pose_array_to_path_node: Subscribes to pose array topic, republishes as nav_msgs/Path topic.
+## `pose_array_to_path`
+1. [`pose_array_to_path_node.cpp`](ros/src/pose_array_to_path_node.cpp): Subscribes to pose array topic, republishes as nav_msgs/Path topic.
 
 ### Subscribed Topics
-* "pose_array": PoseArray input topic.
+* `pose_array`: PoseArray input topic.
 
 ### Published Topics
-* "path": Path output topic.
+* `path`: Path output topic.
 
-## save_base_map_poses_to_file
+## `save_base_map_poses_to_file`
 
 ### Scripts
-1. save_base_map_poses_to_file: Used to create a file in the current folded which contains points of interest in a given map.  
+1. [`save_base_map_poses_to_file`](ros/scripts/save_base_map_poses_to_file): Used to create a file in the current folded which contains points of interest in a given map.  
 
 ### Usage
 
@@ -71,20 +71,9 @@ optional arguments:
                         static frame, e.g. of map (default: /map)
 ```
 
-### Parameters
-* node_frequency: Frecuency of node
-* "~plan" : set the global_plan_topic to be calculated.
+## `map_saver`
 
-1. pose_array_to_path_converter.launch
-
-### Parameters
-* node_frequency: Frecuency of node.
-* "~pose_array": Pose Array subscribed topic.
-* "~path": Path published topic name.
-
-## map_saver
-
-1. map_saver: Stores a map on the path of the package mcr_default_env_config using the node map_saver from map_server package.
+1. [`map_saver`](ros/scripts/map_saver): Stores a map on the path of the package mcr_default_env_config using the node map_saver from map_server package.
 
 ### Arguments
 
