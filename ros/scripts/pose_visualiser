@@ -21,6 +21,10 @@ class PoseVisualiser(object):
         marker_array_arrow = MarkerArray()
         marker_array_text = MarkerArray()
         marker_count = 1
+        if poses is None:
+            # empty navigation_goals.yaml
+            poses = {}
+
         for pose_name, pose in poses.items():
             # arrow marker
             marker_msg_arrow = Marker()
